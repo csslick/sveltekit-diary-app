@@ -1,6 +1,17 @@
+<script>
+  import { page } from '$app/stores'; // 내장 스토어 모듈에서 page 스토어를 가져온다.
+</script>
+
 <header>
-  <h1>Diary</h1>
-  <button class="btn">완료</button>
+  <h1>Diary {$page.url.pathname}</h1>
+  <!-- Home을 제외한 페이지 마다 완료 버튼 표시 -->
+  {#if $page.url.pathname === '/read'}
+    <button class="btn">완료</button>
+  {:else if $page.url.pathname === '/write'} 
+    <button class="btn">완료</button>
+  {:else if $page.url.pathname === '/edit'} 
+    <button class="btn">완료</button> 
+  {/if}
 </header>
 <nav>
   <a href="/">home</a>
