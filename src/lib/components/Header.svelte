@@ -6,3 +6,13 @@
     <a href="/edit">edit</a>
   </nav>
 </header>
+
+<style lang="scss">
+  header {
+    background: #ccc;
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+  }
+</style>
