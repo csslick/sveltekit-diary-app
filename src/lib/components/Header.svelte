@@ -4,7 +4,7 @@
 
   function clickHandler() {
     if($page.url.pathname === '/read') {
-      goto('/'); // write로 이동한다.
+      goto('/'); // home으로 이동한다.
     } else if($page.url.pathname === '/write') {
       // 글쓰기 로직
       goto('/'); // home으로 이동한다.
