@@ -1,16 +1,29 @@
 <script>
+  import { goto } from '$app/navigation'; // 내장 모듈에서 goto 함수를 가져온다.
   import { page } from '$app/stores'; // 내장 스토어 모듈에서 page 스토어를 가져온다.
+
+  function clickHandler() {
+    if($page.url.pathname === '/read') {
+      goto('/'); // write로 이동한다.
+    } else if($page.url.pathname === '/write') {
+      // 글쓰기 로직
+      goto('/'); // home으로 이동한다.
+    } else if($page.url.pathname === '/edit') {
+      // 수정 로직
+      goto('/'); // home으로 이동한다.
+    }
+  }
 </script>
 
 <header>
   <h1>Diary {$page.url.pathname}</h1>
   <!-- Home을 제외한 페이지 마다 완료 버튼 표시 -->
   {#if $page.url.pathname === '/read'}
-    <button class="btn">완료</button>
+    <button class="btn" on:click={clickHandler}>완료</button>
   {:else if $page.url.pathname === '/write'} 
-    <button class="btn">완료</button>
+    <button class="btn" on:click={clickHandler}>완료</button>
   {:else if $page.url.pathname === '/edit'} 
-    <button class="btn">완료</button> 
+    <button class="btn" on:click={clickHandler}>완료</button> 
   {/if}
 </header>
 <nav>
