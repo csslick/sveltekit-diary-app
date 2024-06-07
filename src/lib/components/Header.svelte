@@ -3,12 +3,12 @@
   import { page } from '$app/stores'; // 내장 스토어 모듈에서 page 스토어를 가져온다.
 
   function clickHandler() {
-    if($page.url.pathname === '/read') {
+    if($page.url.pathname.startsWith('/read')) {
       goto('/'); // home으로 이동한다.
-    } else if($page.url.pathname === '/write') {
+    } else if($page.url.pathname.startsWith('/write')) {
       // 글쓰기 로직
       goto('/');
-    } else if($page.url.pathname === '/edit') {
+    } else if($page.url.pathname.startsWith('/edit')) {
       // 수정 로직
       goto('/');
     }
@@ -18,11 +18,11 @@
 <header>
   <h1>Diary {$page.url.pathname}</h1>
   <!-- Home을 제외한 페이지 마다 완료 버튼 표시 -->
-  {#if $page.url.pathname === '/read'}
+  {#if $page.url.pathname.startsWith('/read')}
     <button class="btn" on:click={clickHandler}>완료</button>
-  {:else if $page.url.pathname === '/write'} 
+  {:else if $page.url.pathname.startsWith('/write')} 
     <button class="btn" on:click={clickHandler}>완료</button>
-  {:else if $page.url.pathname === '/edit'} 
+  {:else if $page.url.pathname.startsWith('/edit')} 
     <button class="btn" on:click={clickHandler}>완료</button> 
   {/if}
 </header>
