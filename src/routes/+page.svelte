@@ -1,6 +1,7 @@
 <script>
+  import Icon from '@iconify/svelte';
   import { diaries } from '$lib/store/store';
-  console.log($diaries)
+  // console.log($diaries)
 </script>
 
 <main class='container'>
@@ -12,8 +13,12 @@
     <div class="bottom-info">
       <span class="date">{diary.date}</span>
       <div class="btns">
-        <button class="btn">edit</button>
-        <button class="btn">delete</button>
+        <button class="btn">
+          <Icon icon="uil:pen" width="24" height="24" style="color: #444;" />
+        </button>
+        <button class="btn">
+          <Icon icon="ic:baseline-delete" width="24" height="24" style="color: #f80;" />
+        </button>
       </div>
     </div>
   </div>
