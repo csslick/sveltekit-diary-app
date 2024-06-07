@@ -7,10 +7,10 @@
       goto('/'); // home으로 이동한다.
     } else if($page.url.pathname === '/write') {
       // 글쓰기 로직
-      goto('/'); // home으로 이동한다.
+      goto('/');
     } else if($page.url.pathname === '/edit') {
       // 수정 로직
-      goto('/'); // home으로 이동한다.
+      goto('/');
     }
   }
 </script>
