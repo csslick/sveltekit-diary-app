@@ -28,13 +28,16 @@
   </div>
 </main>
 
-<!-- <style lang='scss'>
-  textarea {
-    border: none;
-    width: 100%;
-    font-size: inherit;
-    padding: 0.5rem 0;
-    background: transparent;
-    outline: none;
+<style lang='scss'>
+  main {
+    padding: 35px 20px;
   }
-</style> -->
+  // textarea {
+  //   border: none;
+  //   width: 100%;
+  //   font-size: inherit;
+  //   padding: 0.5rem 0;
+  //   background: transparent;
+  //   outline: none;
+  // }
+</style>
