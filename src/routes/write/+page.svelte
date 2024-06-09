@@ -1,4 +1,5 @@
 <script>
+  import TextArea from "$lib/components/TextArea.svelte";
   const formatDate = function() {
     return new Date().toLocaleDateString('ko-KR', {
       year: 'numeric',
@@ -7,18 +8,27 @@
       weekday: 'long',
     });
   }
+ 
+  let val = ''; // textarea에 입력된 값
 </script>
 
 <main>
+  <!-- 글쓰기 페이지 -->
   <div class="diary">
-    <textarea placeholder="글쓰기를 시작하세요..."></textarea>
+    <!-- <textarea placeholder="글쓰기를 시작하세요..."></textarea> -->
+    <TextArea 
+      bind:value={val}  
+      minRows={4}
+      maxRows={40}
+      placeholder="글쓰기를 시작하세요..."
+    ></TextArea>
     <div class="bottom-info">
       <span class="date">{formatDate()}</span>
     </div>
   </div>
 </main>
 
-<style lang='scss'>
+<!-- <style lang='scss'>
   textarea {
     border: none;
     width: 100%;
@@ -27,4 +37,4 @@
     background: transparent;
     outline: none;
   }
-</style>
+</style> -->
