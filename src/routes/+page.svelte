@@ -8,7 +8,10 @@
   {#each $diaries as diary}
   <div class='diary'>
     <a href={`/read/${diary.id}`}>
-      <p class="content">{diary.content}</p>
+      <p class="content">{
+        diary.content.length > 50 ? 
+          diary.content.slice(0, 50) + '...' : diary.content
+      }</p>
     </a>
     <div class="bottom-info">
       <span class="date">{diary.date}</span>
