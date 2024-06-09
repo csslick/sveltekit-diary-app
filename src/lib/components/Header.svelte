@@ -7,6 +7,7 @@
       goto('/'); // home으로 이동한다.
     } else if($page.url.pathname.startsWith('/write')) {
       // 글쓰기 로직
+      
       goto('/');
     } else if($page.url.pathname.startsWith('/edit')) {
       // 수정 로직

@@ -1,4 +1,5 @@
 <script>
+  import { writing } from "$lib/store/store";
   import TextArea from "$lib/components/TextArea.svelte";
   const formatDate = function() {
     return new Date().toLocaleDateString('ko-KR', {
@@ -10,6 +11,10 @@
   }
  
   let val = ''; // textarea에 입력된 값
+  $: {
+    $writing = val;
+    console.log($writing);
+  }
 </script>
 
 <main>
