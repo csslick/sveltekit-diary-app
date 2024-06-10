@@ -1,10 +1,12 @@
 <script>
+  import { goto } from '$app/navigation';
   import addIcon from '$lib/assets/icon_add.svg';
   import Icon from '@iconify/svelte';
   import { diaries } from '$lib/store/store';
   // console.log($diaries)
 </script>
 
+<!-- Home -->
 <main class='container'>
   {#each $diaries as diary}
   <div class='diary'>
@@ -17,7 +19,10 @@
     <div class="bottom-info">
       <span class="date">{diary.date}</span>
       <div class="btns">
-        <button class="btn">
+        <button 
+          class="btn" 
+          on:click={() => goto(`/edit/${diary.id}`)}
+        >
           <Icon icon="uil:pen" width="24" height="24" style="color: #444;" />
         </button>
         <button class="btn">

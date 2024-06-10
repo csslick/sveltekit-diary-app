@@ -1,1 +1,52 @@
-<h1>Edit</h1>
+<script>
+  import { diaries } from "$lib/store/store";
+  import { page } from '$app/stores';
+  import Icon from '@iconify/svelte';
+  // import formatDate from "$lib/utils/formatDate";
+  import { writing } from "$lib/store/store";
+  import TextArea from "$lib/components/TextArea.svelte";
+  
+  let id = $page.params.id;
+  let editDiary = $diaries.find(diary => diary.id == id);
+  let val = editDiary.content;
+  let date = editDiary.date;
+  console.log(id)
+
+  $: {
+    $writing = val;
+    console.log($writing);
+  }
+</script>
+
+<main>
+  <!-- 글수정 페이지 -->
+  <div class="diary">
+    <!-- <textarea placeholder="글쓰기를 시작하세요..."></textarea> -->
+    <TextArea 
+      bind:value={val}  
+      minRows={4}
+      maxRows={40}
+      placeholder="글쓰기를 시작하세요..."
+    ></TextArea>
+    <div class="bottom-info">
+      <span class="date">{date}</span>
+      <button class="btn">
+        <Icon icon="ic:baseline-delete" width="24" height="24"  style="color: #f80;" />
+      </button>
+    </div>
+  </div>
+</main>
+
+<style lang='scss'>
+  main {
+    padding: 35px 20px;
+  }
+  // textarea {
+  //   border: none;
+  //   width: 100%;
+  //   font-size: inherit;
+  //   padding: 0.5rem 0;
+  //   background: transparent;
+  //   outline: none;
+  // }
+</style>
