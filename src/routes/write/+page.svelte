@@ -1,15 +1,9 @@
 <script>
+  import formatDate from "$lib/utils/formatDate";
   import { writing } from "$lib/store/store";
   import TextArea from "$lib/components/TextArea.svelte";
-  const formatDate = function() {
-    return new Date().toLocaleDateString('ko-KR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      weekday: 'long',
-    });
-  }
- 
+  
+
   let val = ''; // textarea에 입력된 값
   $: {
     $writing = val;
