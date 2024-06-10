@@ -27,9 +27,10 @@
 		padding: 0.5em;
 		box-sizing: border-box;
 		border: 1px solid #eee;
-		line-height: 1.2;
+		line-height: 1.4;
 		overflow: hidden;
     font-size: inherit;
+		font-weight: 300;
 	}
 	
 	textarea {

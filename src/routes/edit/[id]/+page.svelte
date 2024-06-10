@@ -1,9 +1,8 @@
 <script>
-  import { diaries } from "$lib/store/store";
+  import { diaries, writing, editId } from "$lib/store/store";
   import { page } from '$app/stores';
   import Icon from '@iconify/svelte';
   // import formatDate from "$lib/utils/formatDate";
-  import { writing } from "$lib/store/store";
   import TextArea from "$lib/components/TextArea.svelte";
   
   let id = $page.params.id;
@@ -12,6 +11,7 @@
   let date = editDiary.date;
   console.log(id)
 
+  $editId = id;
   $: {
     $writing = val;
     console.log($writing);
