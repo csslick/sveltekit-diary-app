@@ -17,4 +17,6 @@ export const addDiary = () => {
     }
     diaries.update(diaries => [...diaries, newDiary])
   }
+
+  console.log(get(diaries));
 }
