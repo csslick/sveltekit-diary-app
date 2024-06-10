@@ -1,5 +1,5 @@
 <script>
-  import { writing, addDiary } from "$lib/store/store"; // 내장 스토어 모듈에서 writing 스토어와 addDiary 함수를 가져온다.
+  import { writing, addDiary } from "$lib/store/store"; // 스토어에서 writing 스토어와 addDiary 함수를 가져온다.
   import { goto } from '$app/navigation'; // 내장 모듈에서 goto 함수를 가져온다.
   import { page } from '$app/stores'; // 내장 스토어 모듈에서 page 스토어를 가져온다.
 
