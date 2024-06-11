@@ -37,7 +37,7 @@
     ></textarea>
     <div class="bottom-info">
       <span class="date">{date}</span>
-      <Btns />
+      <Btns diary={editDiary} />
       <!-- <button class="btn">
         <Icon icon="ic:baseline-delete" width="24" height="24"  style="color: #f80;" />
       </button> -->

@@ -6,6 +6,13 @@ export const diaries = writable(posts) // 일기 데이터
 export const writing = writable('') // textarea 입력값
 export const editId = writable(0) // 수정중인 일기 id
 
+// 글 삭제 함수
+export const deleteDiary = (id) => {
+  diaries.update(current => {
+    return current.filter(diary => diary.id!== id)
+  })
+}
+
 // 글 수정 함수
 export const editDiary = (id) => {
   diaries.update(current => {
