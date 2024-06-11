@@ -1,4 +1,5 @@
 <script>
+  import Btns from '$lib/components/Btns.svelte';
   import { goto } from '$app/navigation';
   import addIcon from '$lib/assets/icon_add.svg';
   import Icon from '@iconify/svelte';
@@ -18,17 +19,7 @@
     </a>
     <div class="bottom-info">
       <span class="date">{diary.date}</span>
-      <div class="btns">
-        <button 
-          class="btn" 
-          on:click={() => goto(`/edit/${diary.id}`)}
-        >
-          <Icon icon="uil:pen" width="24" height="24" style="color: #444;" />
-        </button>
-        <button class="btn">
-          <Icon icon="ic:baseline-delete" width="24" height="24" style="color: #f80;" />
-        </button>
-      </div>
+      <Btns {diary} />
     </div>
   </div>
   {/each}

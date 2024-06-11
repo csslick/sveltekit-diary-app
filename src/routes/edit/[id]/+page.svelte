@@ -1,4 +1,5 @@
 <script>
+  import Btns from '$lib/components/Btns.svelte';
   import { diaries, writing, editId } from "$lib/store/store";
   import { page } from '$app/stores';
   import Icon from '@iconify/svelte';
@@ -9,7 +10,7 @@
   let editDiary = $diaries.find(diary => diary.id == id);
   let val = editDiary.content;
   let date = editDiary.date;
-  console.log(id)
+  console.log(id, $page.url.pathname);
 
   $editId = id;
   $: {
@@ -30,9 +31,10 @@
     ></TextArea>
     <div class="bottom-info">
       <span class="date">{date}</span>
-      <button class="btn">
+      <Btns />
+      <!-- <button class="btn">
         <Icon icon="ic:baseline-delete" width="24" height="24"  style="color: #f80;" />
-      </button>
+      </button> -->
     </div>
   </div>
 </main>
