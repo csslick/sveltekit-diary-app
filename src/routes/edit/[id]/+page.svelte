@@ -1,4 +1,5 @@
 <script>
+  import autosize from 'svelte-autosize';
   import Btns from '$lib/components/Btns.svelte';
   import { diaries, writing, editId } from "$lib/store/store";
   import { page } from '$app/stores';
@@ -23,12 +24,17 @@
   <!-- 글수정 페이지 -->
   <div class="diary">
     <!-- <textarea placeholder="글쓰기를 시작하세요..."></textarea> -->
-    <TextArea 
+    <!-- <TextArea 
       bind:value={val}  
-      minRows={4}
+      minRows={8}
       maxRows={40}
       placeholder="글쓰기를 시작하세요..."
-    ></TextArea>
+    ></TextArea> -->
+    <textarea 
+      use:autosize
+      bind:value={val}  
+      placeholder="글쓰기를 시작하세요..."
+    ></textarea>
     <div class="bottom-info">
       <span class="date">{date}</span>
       <Btns />
@@ -43,6 +49,7 @@
   main {
     padding: 35px 20px;
   }
+
   // textarea {
   //   border: none;
   //   width: 100%;
@@ -50,5 +57,6 @@
   //   padding: 0.5rem 0;
   //   background: transparent;
   //   outline: none;
+  //   line-height: 1.6;
   // }
 </style>

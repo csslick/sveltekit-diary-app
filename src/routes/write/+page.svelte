@@ -1,7 +1,8 @@
 <script>
   import formatDate from "$lib/utils/formatDate";
   import { writing } from "$lib/store/store";
-  import TextArea from "$lib/components/TextArea.svelte";
+  import autosize from 'svelte-autosize';
+  // import TextArea from "$lib/components/TextArea.svelte";
   
 
   let val = ''; // textarea에 입력된 값
@@ -15,12 +16,17 @@
   <!-- 글쓰기 페이지 -->
   <div class="diary">
     <!-- <textarea placeholder="글쓰기를 시작하세요..."></textarea> -->
-    <TextArea 
+    <!-- <TextArea 
       bind:value={val}  
       minRows={4}
       maxRows={40}
       placeholder="글쓰기를 시작하세요..."
-    ></TextArea>
+    ></TextArea> -->
+    <textarea 
+      use:autosize
+      bind:value={val}  
+      placeholder="글쓰기를 시작하세요..."
+    ></textarea>
     <div class="bottom-info">
       <span class="date">{formatDate()}</span>
     </div>

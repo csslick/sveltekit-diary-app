@@ -4,8 +4,8 @@
 	export let maxRows;
 	export let placeholder = '';
 	
-	$: minHeight = `${1 + minRows * 1.2}em`;
-	$: maxHeight = maxRows ? `${1 + maxRows * 1.2}em` : `auto`;
+	$: minHeight = `${1 + minRows * 1.6}em`;
+	$: maxHeight = maxRows ? `${1 + maxRows * 1.6}em` : `auto`;
 </script>
 
 <div class="text-container">
@@ -27,7 +27,7 @@
 		padding: 0.5em;
 		box-sizing: border-box;
 		border: 1px solid #eee;
-		line-height: 1.4;
+		line-height: 1.6;
 		overflow: hidden;
     font-size: inherit;
 		font-weight: 300;
