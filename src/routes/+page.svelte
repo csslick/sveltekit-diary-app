@@ -8,7 +8,11 @@
   // console.log($diaries)
 
   export let data;
-  console.log(data);
+
+  // $diaries에 data 저장
+
+
+  // console.log(data);
 </script>
 
 <!-- Home -->
