@@ -1,15 +1,19 @@
 <script>
+  import formatDate from "$lib/utils/formatDate";
   import Btns from '$lib/components/Btns.svelte';
   import { goto } from '$app/navigation';
   import addIcon from '$lib/assets/icon_add.svg';
   import Icon from '@iconify/svelte';
   import { diaries } from '$lib/store/store';
   // console.log($diaries)
+
+  export let data;
+  console.log(data);
 </script>
 
 <!-- Home -->
 <main class='container'>
-  {#each $diaries as diary}
+  {#each data.diaries as diary}
   <div class='diary'>
     <a href={`/read/${diary.id}`}>
       <p class="content">{
@@ -18,7 +22,7 @@
       }</p>
     </a>
     <div class="bottom-info">
-      <span class="date">{diary.date}</span>
+      <span class="date">{formatDate(diary.created_at)}</span>
       <Btns {diary} />
     </div>
   </div>
