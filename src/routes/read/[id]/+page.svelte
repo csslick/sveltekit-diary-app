@@ -22,13 +22,5 @@
     <div class="bottom-info">
       <span class="date">{formatDate(data.diary[0].created_at)}</span>
       <Btns {diary} />
-      <!-- <div class="btns">
-        <button class="btn">
-          <Icon icon="uil:pen" width="24" height="24" style="color: #444;" />
-        </button>
-        <button class="btn">
-          <Icon icon="ic:baseline-delete" width="24" height="24" style="color: #f80;" />
-        </button>
-      </div> -->
     </div>
 </main>
