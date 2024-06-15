@@ -3,13 +3,13 @@
   import { goto } from '$app/navigation'; // 내장 모듈에서 goto 함수를 가져온다.
   import { page } from '$app/stores'; // 내장 스토어 모듈에서 page 스토어를 가져온다.
 
-  function clickHandler() {
+  async function clickHandler() {
     if($page.url.pathname.startsWith('/read')) {
       goto('/'); // home으로 이동한다.
     } else if($page.url.pathname.startsWith('/write')) {
       // 글쓰기 로직
       if($writing) {
-        addDiary(); // 글을 작성한 후 addDiary 함수를 호출한다.
+        await addDiary(); // 글을 작성한 후 addDiary 함수를 호출한다.
       }
       goto('/');
     } else if($page.url.pathname.startsWith('/edit')) {
