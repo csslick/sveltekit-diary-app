@@ -14,3 +14,18 @@ export async function POST({ request }) {
   }
   return json({ success: true })
 }
+
+export async function PATCH({ request }) {
+  const data = await request.json()
+  const { id, content } = data;
+  const { error } = await supabase
+    .from('diaries')
+    .update({ content })
+    .eq('id', id)
+    
+  // 에러 처리: 클라이언트에 전달
+  if (error) {
+    return json( { success: false })
+  }
+  return json({ success: true })
+} 

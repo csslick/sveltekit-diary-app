@@ -15,7 +15,8 @@
     } else if($page.url.pathname.startsWith('/edit')) {
       // 수정 로직
       if($writing) {
-        editDiary($editId); // 글을 수정한 후 editDiary 함수를 호출한다.
+        // editDiary($editId); // 글을 수정한 후 editDiary 함수를 호출한다.
+        await editDiary($editId);
       }
       goto('/');
     }

@@ -14,16 +14,26 @@ export const deleteDiary = (id) => {
 }
 
 // 글 수정 함수
-export const editDiary = (id) => {
-  diaries.update(current => {
-    return current.map(diary => {
-      if(diary.id.toString() === id.toString()) {
-        return { ...diary, content: get(writing) }
-      } else {
-        return diary
-      }
+export const editDiary = async (id) => { // 수정글 id 전달 받음
+  const content = get(writing); // 수정 내용
+
+  if(content) {
+    const response = await fetch('/api', {
+      method: 'PATCH', // 수정 요청
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id, content })
     })
-  })
+    const data = await response.json()
+    console.log(data)
+    // 성공 여부 확인
+    if(data.success) {
+      console.log('글수정 성공')
+    } else {
+      console.log('글수정 실패')
+    }    
+  }
 }
 
 // 글 저장 함수
@@ -47,6 +57,5 @@ export const addDiary = async () => {
       console.log('글쓰기 실패')
     }
   }
-
   // console.log(get(diaries));
 }
