@@ -27,7 +27,7 @@ export const editDiary = async (id) => {
     })
     const data = await response.json()
     console.log(data)
-    // 글쓰기 성공 여부 확인
+    // 성공 여부 확인
     if(data.success) {
       console.log('글수정 성공')
     } else {
