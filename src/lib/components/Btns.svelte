@@ -17,7 +17,13 @@
   {/if}
   <button 
     class="btn" 
-    on:click={() => {deleteDiary(diary.id); goto('/')}}
+    on:click={
+      async () => {
+        await deleteDiary(diary.id); 
+        // goto('/');
+        location.reload(); // 페이지 새로고침
+      }
+    }
   >
     <Icon icon="ic:baseline-delete" width="24" height="24" style="color: #f80;" />
   </button>

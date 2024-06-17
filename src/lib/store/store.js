@@ -7,10 +7,22 @@ export const writing = writable('') // textarea 입력값
 export const editId = writable(0) // 수정중인 일기 id
 
 // 글 삭제 함수
-export const deleteDiary = (id) => {
-  diaries.update(current => {
-    return current.filter(diary => diary.id!== id)
-  })
+export const deleteDiary = async (id) => {
+    const response = await fetch('/api', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id })
+    })
+    const data = await response.json()
+    console.log(data)
+    // 성공 여부 확인
+    if(data.success) {
+      console.log('글삭제 성공')
+    } else {
+      console.log('글삭제 실패')
+    }
 }
 
 // 글 수정 함수
